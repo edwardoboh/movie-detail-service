@@ -7,12 +7,15 @@ import jakarta.persistence.Id;
 public class MovieDetailEntity {
     @Id
     private String id;
+    private String name;
     private String description;
+
 
     public MovieDetailEntity () {}
 
-    public MovieDetailEntity(String id, String description) {
+    public MovieDetailEntity(String id, String name, String description) {
         this.id = id;
+        this.name = name;
         this.description = description;
     }
 
@@ -24,6 +27,13 @@ public class MovieDetailEntity {
         return this.id;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return this.name;
+    }
     public void setDescription(String description) {
         this.description = description;
     }
@@ -36,6 +46,7 @@ public class MovieDetailEntity {
     public String toString() {
         return "MovieDetailEntity{" +
                 "id='" + id + '\'' +
+                ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 '}';
     }
